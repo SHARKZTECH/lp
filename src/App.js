@@ -16,7 +16,8 @@ function App() {
       {/* <Draggable
       defaultPosition={{x: 0, y: 0}}
       > */}
-        <MapInteractionCSS>
+
+    <MapInteractionCSS>
     <div className="castle-bg" draggable="false" > 
 
      <div className='fire-wrap-1 fire-wrap'>
@@ -68,10 +69,11 @@ function App() {
 
 
 
-     <Modal show={show} setShow={setShow} text={text}/>
 
     </div>
     </MapInteractionCSS>
+    <Modal show={show} setShow={setShow} text={text}/>
+
     {/* </Draggable> */}
     </div>
   );
