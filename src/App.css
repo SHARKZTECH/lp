@@ -70,11 +70,12 @@ html {
   background-image: url(../src/assets/castle-bg.2c59d92c.jpeg);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: center ;
   min-width: 1500px;
-  min-height: 1500px;
+  height: 100vh;
   transition: all 0s;
   transform-origin: center;
+  
 }
 
 
@@ -110,8 +111,8 @@ html {
 
 .jester-container {
   position: absolute;
-  bottom: 407px;
-  left: 656px;
+  bottom: 65px;
+  left: 700px;
 }
 .jester-wrap {
   overflow: hidden;
@@ -128,30 +129,30 @@ html {
   position: absolute;
   height: 43px;
   width: 43px;
-  right: -398px;
-  bottom: -50px;
+  right: -180px;
+  bottom: 30px;
 }
 
 .quest-btn {
   position: absolute;
-  top: 100px;
-  left: 300px;
+  top: 10px;
+  left: 550px;
   height: 43px;
   width: 43px;
 }
 
 .land-auction-btn {
   position: absolute;
-  top: 150px;
-  left: 800px;
+  top: 20px;
+  left: 750px;
   height: 43px;
   width: 43px;
 }
 
 .sum-btn {
   position: absolute;
-  top: 340px;
-  right: 170px;
+  top: 100px;
+  right:500px;
   height: 43px;
   width: 43px;
 }
@@ -194,10 +195,10 @@ html {
   background-size: 10px 7px;
 }
 .game-button:after{
-  top: -2.7398px;
+    top: -2.7398px;
     left: 0px;
     width: 100%;
-    height: calc(100% + 6.07959px);
+    height: calc(100% + 6px);
     background-image: url(../src/assets/text-bubble-topLeft.70121122.png),url(../src/assets/text-bubble-topRight.48ee58d9.png),url(../src/assets/text-bubble-btmLeft.07695dc0.png),url(../src/assets/text-bubble-btmRight.e352ddc0.png);
     background-position: left top,right top,left bottom,right bottom;
     background-repeat: no-repeat;
