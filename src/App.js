@@ -32,8 +32,8 @@ function App() {
     <TransformWrapper
          minScale={.49}
         defaultScale={.49}
-        defaultPositionX={1}
-        defaultPositionY={1}  
+        defaultPositionX={0}
+        defaultPositionY={0}  
         // limitToBounds={false}
         // onWheel={()=>{console.log("whell")}}
         // onZoom={()=>{console.log("zoom")}}

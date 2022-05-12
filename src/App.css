@@ -69,14 +69,14 @@ html {
   position: relative;
   background-image: url(../src/assets/castle-bg.2c59d92c.jpeg);
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center top;
+  background-size: cover;
+  background-position: center;
   min-width: 1500px;
   min-height: 1500px;
   transition: all 0s;
   transform-origin: center;
   /* zoom: .49; */
-  /* margin: 8rem auto auto auto; */
+  margin: 8rem auto auto auto;
 }
 
 
@@ -130,14 +130,14 @@ html {
   position: absolute;
   height: 43px;
   width: 43px;
-  right: -398px;
-  bottom: -50px;
+  right: -420px;
+  bottom: -90px;
 }
 
 .quest-btn {
   position: absolute;
-  top: 100px;
-  left: 300px;
+  top: 60px;
+  left: 250px;
   height: 43px;
   width: 43px;
 }
@@ -184,18 +184,18 @@ html {
     animation: buttonAnimation-1900b524 2s infinite;
     background-size: 7px 7px;
 }
-.game-button:before{
-  top: -2.7398px;
+.game-button::before{
+  top: -1.9px;
   left: 4.7398px;
   width: calc(100% - 9px);
-  height: calc(100% + 5px);
+  height: calc(100% + 7px);
   background-image: url(../src/assets/text-bubble-top.d0ee95ad.png),url(../src/assets/text-bubble-btm.f8ce5a59.png);
   background-position: center top,center bottom;
   background-repeat: repeat-x;
   background-color: #ffe0b7;
   background-size: 10px 7px;
 }
-.game-button:after{
+.game-button::after{
   top: -2.7398px;
     left: 0px;
     width: 100%;
@@ -205,7 +205,7 @@ html {
     background-repeat: no-repeat;
     background-size: 11px 11px;
 }
-.game-button:before, .game-button:after {
+.game-button::before, .game-button::after {
   content: "";
   display: block;
   position: absolute;
@@ -221,8 +221,8 @@ html {
   font-weight: 700;
   white-space: nowrap;
   z-index: 1;
-  padding: 0 10px;
-  padding-top: .9rem;
+  padding: .4rem 1.2rem;
+  margin-bottom: -1.1rem;
 }
 
 

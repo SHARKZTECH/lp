@@ -10,11 +10,11 @@ function Modal({showm,setShowm,text,setShowi,setTexti}) {
                  <span>{text}</span>
              </h3>
              <div className="modal-body">
-                 <button className="green-button click-cursor" onClick={()=>{setShowi(true); setShowm(false); setTexti("View All Assets");}}>
+                 <button className="green-button click-cursor" onClick={()=>{setShowi(true); setShowm(false); setTexti("View All Assets");}} style={{padding:' .3rem 4rem'}}>
                      View Items
                  </button>
-                 <button className="green-button click-cursor" onClick={()=>{setShowi(true); setShowm(false); setTexti("Buy Assets")}}>
-                     Buy Items
+                 <button className="green-button click-cursor" onClick={()=>{setShowi(true); setShowm(false); setTexti("Buy Assets")}} style={{padding:' .3rem 4.19rem'}}>
+                     Buy  Items
                  </button>
              </div>
            
