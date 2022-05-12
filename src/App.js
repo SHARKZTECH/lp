@@ -19,8 +19,10 @@ function App() {
   const [texti, setTexti] = useState('');
 
 
+
   return (  
-    <div className='castle-overlay overlay'>    
+  
+     <div className=' overlay'>    
 
     {/* <MapInteractionCSS >*/}
 {/*     
@@ -28,14 +30,18 @@ function App() {
       defaultPosition={{x: '1500px', y: '100vh'}}
       > */}
     <TransformWrapper
-        defaultScale={1}
+         minScale={.49}
+        defaultScale={.49}
         defaultPositionX={1}
-        defaultPositionY={1}
+        defaultPositionY={1}  
+        // limitToBounds={false}
+        // onWheel={()=>{console.log("whell")}}
+        // onZoom={()=>{console.log("zoom")}}
+        
     >
-      
-   <TransformComponent>
+   <TransformComponent wrapperClass='castle-overlay' contentClass='castle-bg'>
 
-    <div className="castle-bg"> 
+    {/* <div className="castle-bg">  */}
 
      <div className='fire-wrap-1 fire-wrap'>
        <div className='fire'></div>
@@ -87,7 +93,7 @@ function App() {
 
 
 
-    </div>
+    {/* </div> */}
 
     </TransformComponent>
     </TransformWrapper>
@@ -97,8 +103,8 @@ function App() {
     <ModalM showm={showm} setShowm={setShowm} text={text} setShowi={setShowi} setTexti={setTexti}/>
     <Market showi={showi} setShowm={setShowm} setShowi={setShowi} texti={texti} />
 
-
     </div>
+
   );
 }
 
