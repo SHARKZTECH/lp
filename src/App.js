@@ -17,13 +17,14 @@ function App() {
   const [texti, setTexti] = useState('');
 
 
-  return (
-    <div className='castle-overlay overlay'>
-      {/* <Draggable
-      defaultPosition={{x: 0, y: 0}}
-      > */}
+  return (  
+    <div className='castle-overlay overlay'>    
 
-    <MapInteractionCSS>
+    <MapInteractionCSS
+    >
+        <Draggable
+      defaultPosition={{x: '1500px', y: '100vh'}}
+      >
     <div className="castle-bg" draggable="false" > 
 
      <div className='fire-wrap-1 fire-wrap'>
@@ -77,13 +78,13 @@ function App() {
 
 
     </div>
+    </Draggable>
     </MapInteractionCSS>
     <Modal show={show} setShow={setShow} text={text}/>
     <ModalM showm={showm} setShowm={setShowm} text={text} setShowi={setShowi} setTexti={setTexti}/>
     <Market showi={showi} setShowm={setShowm} setShowi={setShowi} texti={texti} />
 
 
-    {/* </Draggable> */}
     </div>
   );
 }
