@@ -31,9 +31,11 @@ function App() {
       > */}
     <TransformWrapper
          minScale={.49}
-        defaultScale={.49}
-        defaultPositionX={0}
-        defaultPositionY={0}  
+         initialScale={.49}
+         initialPositionX={320}
+         initialPositionY={1}
+         defaultPositionX={1}
+         defaultPositionY={1}  
         // limitToBounds={false}
         // onWheel={()=>{console.log("whell")}}
         // onZoom={()=>{console.log("zoom")}}
@@ -77,7 +79,7 @@ function App() {
      </div>
 
      <div className='land-auction-btn click-cursor'>
-       <button className='game-button click-cursor' onClick={()=>{setShowm(true); setText('Market Place')}}>
+       <button className='game-button click-cursor' onClick={()=>{setShow(true); setText('Market Place')}}>
          <div className='title'>Market Place</div>
          <img src='../scr/assets/bubble-arrow.c34d2c3a.png' alt='buble'/>
        </button>

@@ -70,7 +70,7 @@ html {
   background-image: url(../src/assets/castle-bg.2c59d92c.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center right;
   min-width: 1500px;
   min-height: 1500px;
   transition: all 0s;
