@@ -1,3 +1,8 @@
+import Land1 from "../assets/land-1.png"
+import Land2 from "../assets/land-2.png"
+import Land3 from "../assets/land-3.png"
+import Land4 from "../assets/land-4.png"
+import Land5 from "../assets/land-5.png"
 
 const Market= ({showi,setShowi,setShowm,texti})=>{
 
@@ -153,12 +158,12 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                      </div>
                     </div>
                 </div>
-                <div className="land-list game-scroll-bar row">
-                    <div className="col c-12">
+                <div className="land-list game-scroll-bar rowl">
+                    <div className="col c-12 c-12l">
                         <div>
                             <div className="land-item">
                                 <div className="land-image-wrap">
-                                    <div className="land-image" style={{background: 'red'}}>
+                                    <div className="land-image" style={{backgroundImage: `url(${Land4})`}}>
                                         <div className="green-button land-sale-tag">For Sale</div>
                                     </div>
                                 </div>
@@ -187,19 +192,19 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>   
                     <div className="col c-12">
                         <div>
                             <div className="land-item">
                                 <div className="land-image-wrap">
-                                    <div className="land-image" style={{background: 'red'}}>
+                                    <div className="land-image" style={{backgroundImage: `url(${Land1})`}}>
                                         <div className="green-button land-sale-tag">For Sale</div>
                                     </div>
                                 </div>
                                 <div className="land-item__details">
                                     <div className="land-item__header">
-                                        <p>Sword 4</p>
-                                        <p>#4</p>
+                                        <p>Sword 1</p>
+                                        <p>#1</p>
                                     </div>
                                     <div className="land-item__info">
                                         <div className="land-info__row">
@@ -212,7 +217,41 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                                         </div>
                                         <div className="land-info__row">
                                             <p>For sale</p>
-                                            <p>400000</p>
+                                            <p>600000</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="land-item__button-wrap">
+                                    <button className="green-button click-cursor">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div className="col c-12">
+                        <div>
+                            <div className="land-item">
+                                <div className="land-image-wrap">
+                                    <div className="land-image" style={{backgroundImage: `url(${Land5})`}}>
+                                        <div className="green-button land-sale-tag">For Sale</div>
+                                    </div>
+                                </div>
+                                <div className="land-item__details">
+                                    <div className="land-item__header">
+                                        <p>Sword 5</p>
+                                        <p>#5</p>
+                                    </div>
+                                    <div className="land-item__info">
+                                        <div className="land-info__row">
+                                            <p>Class</p>
+                                            <p>King</p>
+                                        </div>
+                                        <div className="land-info__row">
+                                            <p>Level</p>
+                                            <p>1</p>
+                                        </div>
+                                        <div className="land-info__row">
+                                            <p>For sale</p>
+                                            <p>50000</p>
                                         </div>
                                     </div>
                                 </div>
@@ -226,14 +265,14 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                         <div>
                             <div className="land-item">
                                 <div className="land-image-wrap">
-                                    <div className="land-image" style={{background: 'red'}}>
+                                    <div className="land-image" style={{backgroundImage: `url(${Land2})`}}>
                                         <div className="green-button land-sale-tag">For Sale</div>
                                     </div>
                                 </div>
                                 <div className="land-item__details">
                                     <div className="land-item__header">
-                                        <p>Sword 4</p>
-                                        <p>#4</p>
+                                        <p>Sword 2</p>
+                                        <p>#2</p>
                                     </div>
                                     <div className="land-item__info">
                                         <div className="land-info__row">
@@ -246,7 +285,7 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                                         </div>
                                         <div className="land-info__row">
                                             <p>For sale</p>
-                                            <p>400000</p>
+                                            <p>2000</p>
                                         </div>
                                     </div>
                                 </div>
@@ -260,14 +299,14 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                         <div>
                             <div className="land-item">
                                 <div className="land-image-wrap">
-                                    <div className="land-image" style={{background: 'red'}}>
+                                    <div className="land-image" style={{backgroundImage: `url(${Land3})`}}>
                                         <div className="green-button land-sale-tag">For Sale</div>
                                     </div>
                                 </div>
                                 <div className="land-item__details">
                                     <div className="land-item__header">
-                                        <p>Sword 4</p>
-                                        <p>#4</p>
+                                        <p>Sword 3</p>
+                                        <p>#3</p>
                                     </div>
                                     <div className="land-item__info">
                                         <div className="land-info__row">
@@ -280,7 +319,7 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                                         </div>
                                         <div className="land-info__row">
                                             <p>For sale</p>
-                                            <p>400000</p>
+                                            <p>300000</p>
                                         </div>
                                     </div>
                                 </div>
@@ -289,7 +328,7 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>              
                 </div>
             </div>
         </div>

@@ -397,7 +397,26 @@ element.style {
   flex-wrap: wrap;
   margin-left: -4px;
   margin-right: -4px;
-  flex-direction: column;
+  /* flex-direction: column; */
+}
+.c-12 {
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+.col {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.c-6 {
+  max-width: 50%;
+  flex: 0 0 50%;
+}
+.l-4{
+  flex: 40%;
+}
+.l-8{
+  flex: 60%;
 }
 
 @media (max-width: 1024px)
@@ -424,15 +443,7 @@ element.style {
     display: flex;
     justify-content: flex-end;
 }
-.c-12 {
-    max-width: 100%;
-    flex: 0 0 100%;
-}
 
-.col {
-    padding-left: 4px;
-    padding-right: 4px;
-}
 .filter-expanded{
   height: 100%;
   width: 100%;
@@ -590,10 +601,7 @@ ul, li {
 .filter-status__item, .filter-region__item {
   margin-bottom: 10px;
 }
-.c-6 {
-  max-width: 50%;
-  flex: 0 0 50%;
-}
+
 .status-label, .region-label{
   color: rgb(62, 31, 5);
   font-family: Lora, Georgia, serif;
@@ -614,13 +622,13 @@ ul, li {
   background-color: rgb(6, 108, 69);
   z-index: 1;
 }
-.status-label input:after, .status-label input:before {
+.status-label input::after, .status-label input::before {
   border-radius: 50%;
 }
-.status-label input:after, .status-label input:before {
+.status-label input:after, .status-label input::before {
   border-radius: 50%;
 }
-.status-label input:after, .region-label input:after {
+.status-label input::after, .region-label input::after {
   content: "";
   position: absolute;
   top: -1px;
@@ -649,10 +657,7 @@ ul, li {
     flex-direction: column;
     padding: 50px 75px 60px;
 }
-.c-12 {
-    max-width: 100%;
-    flex: 0 0 100%;
-}
+
 
 .land-view__heading{
   text-align: center;
@@ -698,6 +703,15 @@ ul, li {
 }
 }
 
+.rowl {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -4px;
+  margin-right: -4px;
+  flex-direction: column;
+}
+
+
 .land-sort {
     display: flex;
     align-items: center;
@@ -715,21 +729,6 @@ ul, li {
   padding: 3px 0px;
 }
 
-.game-scroll-bar::-webkit-scrollbar-thumb {
-  background-color: rgb(255, 227, 188);
-  width: 6px;
-  margin: 2px 0px;
-  border-radius: 16px;
-}
-.game-scroll-bar::-webkit-scrollbar-track {
-  background-color: rgb(238, 203, 161);
-  width: 4px;
-  border-radius: 6px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: rgb(236, 204, 164);
-  border-image: initial;
-}
 .land-item{
   height: auto;
   background-color: rgb(238, 203, 161);
@@ -783,7 +782,7 @@ ul, li {
     position: relative;
     border-radius: 8px;
 }
-.land-select__list:after {
+.land-select__list::after {
   position: absolute;
   content: "";
   top: 14px;
