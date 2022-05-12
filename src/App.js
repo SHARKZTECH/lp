@@ -2,6 +2,8 @@ import './App.css';
 import { useState } from 'react';
 import Draggable from "react-draggable";
 import { MapInteractionCSS } from 'react-map-interaction';
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
 
 import Modal from './componets/Modal';
 import ModalM from './componets/ModalM';
@@ -20,11 +22,18 @@ function App() {
   return (  
     <div className='castle-overlay overlay'>    
 
-    <MapInteractionCSS
-    >
+    {/* <MapInteractionCSS >*/}
+{/*     
         <Draggable
       defaultPosition={{x: '1500px', y: '100vh'}}
-      >
+      > */}
+    <TransformWrapper
+        defaultScale={.5}
+        defaultPositionX={1}
+        defaultPositionY={1}
+    >
+   <TransformComponent>
+
     <div className="castle-bg" draggable="false" > 
 
      <div className='fire-wrap-1 fire-wrap'>
@@ -78,8 +87,11 @@ function App() {
 
 
     </div>
-    </Draggable>
-    </MapInteractionCSS>
+
+    </TransformComponent>
+    </TransformWrapper>
+    {/* </Draggable> */}
+    {/* </MapInteractionCSS> */}
     <Modal show={show} setShow={setShow} text={text}/>
     <ModalM showm={showm} setShowm={setShowm} text={text} setShowi={setShowi} setTexti={setTexti}/>
     <Market showi={showi} setShowm={setShowm} setShowi={setShowi} texti={texti} />
