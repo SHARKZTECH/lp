@@ -28,13 +28,14 @@ function App() {
       defaultPosition={{x: '1500px', y: '100vh'}}
       > */}
     <TransformWrapper
-        defaultScale={.5}
+        defaultScale={1}
         defaultPositionX={1}
         defaultPositionY={1}
     >
+      
    <TransformComponent>
 
-    <div className="castle-bg" draggable="false" > 
+    <div className="castle-bg"> 
 
      <div className='fire-wrap-1 fire-wrap'>
        <div className='fire'></div>

@@ -75,8 +75,8 @@ html {
   min-height: 1500px;
   transition: all 0s;
   transform-origin: center;
-  /* zoom: .5;
-  margin: 0 auto 0 38%; */
+  zoom: .49;
+  margin: 8rem auto auto auto;
 }
 
 
@@ -413,7 +413,7 @@ element.style {
   flex: 0 0 50%;
 }
 .l-4{
-  flex: 40%;
+  flex: 30%;
 }
 .l-8{
   flex: 60%;
