@@ -85,7 +85,7 @@ function App() {
        <div className='jester-wrap'> 
      <div className='clp-grandle-btn click-cursor'>
        <button className='game-button click-cursor' onClick={()=>{setShow(true); setText('CLP')}}>
-         <div className='title'>CLP</div>
+         <div className='title'>LP</div>
          <img src='../scr/assets/bubble-arrow.c34d2c3a.png' alt='buble'/>
        </button>
      </div>
