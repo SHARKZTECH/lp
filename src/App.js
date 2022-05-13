@@ -64,8 +64,8 @@ function App() {
      </div>
      
      <div className='quest-btn click-cursor'>
-       <button className='game-button click-cursor' onClick={()=>{setShow(true); setText('Quest')}}>
-         <div className='title'>Quest</div>
+       <button className='game-button click-cursor' onClick={()=>{setShow(true); setText('Quests')}}>
+         <div className='title'>Quests</div>
          <img src='../scr/assets/bubble-arrow.c34d2c3a.png' alt='buble'/>
        </button>
      </div>
@@ -73,8 +73,8 @@ function App() {
      <div className='jester-container'>
        <div className='jester-wrap'> 
      <div className='jester-grandle-btn click-cursor'>
-       <button className='game-button click-cursor' onClick={()=>{setShow(true); setText('Stake')}}>
-         <div className='title'>Stake</div>
+       <button className='game-button click-cursor' onClick={()=>{setShow(true); setText('Staking')}}>
+         <div className='title'>Staking</div>
          <img src='../scr/assets/bubble-arrow.c34d2c3a.png' alt='buble'/>
        </button>
      </div>
@@ -84,7 +84,7 @@ function App() {
      <div className='jester-container'>
        <div className='jester-wrap'> 
      <div className='clp-grandle-btn click-cursor'>
-       <button className='game-button click-cursor' onClick={()=>{setShow(true); setText('CLP')}}>
+       <button className='game-button click-cursor' onClick={()=>{setShow(true); setText('LP')}}>
          <div className='title'>LP</div>
          <img src='../scr/assets/bubble-arrow.c34d2c3a.png' alt='buble'/>
        </button>
@@ -93,8 +93,8 @@ function App() {
      </div>
 
      <div className='land-auction-btn click-cursor'>
-       <button className='game-button click-cursor' onClick={()=>{setShow(true); setText('Market Place')}}>
-         <div className='title'>Market Place</div>
+       <button className='game-button click-cursor' onClick={()=>{setShow(true); setText('Marketplace')}}>
+         <div className='title'>Marketplace</div>
          <img src='../scr/assets/bubble-arrow.c34d2c3a.png' alt='buble'/>
        </button>
      </div>

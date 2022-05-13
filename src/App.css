@@ -122,7 +122,8 @@ html {
 }
 .jester-grandle-btn {
   position: absolute;
-  top: -141px;
+  top: -250px;
+  left: -35px;
   height: 43px;
   width: 43px;
 }
