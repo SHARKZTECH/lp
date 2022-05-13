@@ -251,6 +251,17 @@ element.style {
 .modal{
   padding: 50px 50px 70px;
 }
+
+element.style {
+  width: 100vw;
+  height: 264px;
+  margin-bottom: 30px;
+}
+@media (max-width: 590px){
+.modal{
+  width: 100vw!important;
+}
+}
 .game-border {
   position: relative;
   background-color: #c5a67c;
@@ -285,6 +296,15 @@ element.style {
   width: 40px;
   height: 40px;
 }
+@media (max-width: 590px){
+.close-btn {
+    top: 35px;
+    right: 28px;
+    width: 48px;
+    height: 48px;
+}
+}
+
 .modal-title.fancy{
   position: relative;
   top: -42px;
@@ -299,6 +319,11 @@ element.style {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 590px){
+  .modal-title.fancy{
+      top: 17px;
+  }
+  }
 .modal-title{
   color: maroon;
   text-align: center;
@@ -323,6 +348,11 @@ element.style {
   flex-direction: column;
   align-items: center;
 }
+@media (max-width: 590px){
+.modal-body{
+    top: 38px;
+}
+}
 .coming-soon__wrap{
   width: 100%;
   pointer-events: none;
@@ -345,6 +375,12 @@ element.style {
     font-weight: 700;
     font-family: Lora,sans-serif;
     color: maroon;
+}
+@media (max-width: 590px){
+.coming-soon {
+    width: 200px;
+    top: 14px;
+}
 }
 .coming-soon__wrap{
     width: 100%;
