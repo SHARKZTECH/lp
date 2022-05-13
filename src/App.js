@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState,useLayoutEffect } from 'react';
 import Draggable from "react-draggable";
 import { MapInteractionCSS } from 'react-map-interaction';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
@@ -18,7 +18,21 @@ function App() {
   const [showi, setShowi] = useState(false);
   const [texti, setTexti] = useState('');
 
-
+  function useWindowSize() {
+    const [size, setSize] = useState([0, 0]);
+    useLayoutEffect(() => {
+      function updateSize() {
+        setSize([window.innerWidth, window.innerHeight]);
+      }
+      window.addEventListener('resize', updateSize);
+      updateSize();
+      return () => window.removeEventListener('resize', updateSize);
+    }, []);
+    return size;
+  }
+  const [width, height] = useWindowSize(); 
+  console.log(width)
+  const x=window.innerWidth >= 1200 ? 320 : window.innerWidth >= 800 ? 100 : window.innerWidth >= 540 ? 50 : 1;
 
   return (  
   
@@ -32,7 +46,7 @@ function App() {
     <TransformWrapper
          minScale={.49}
          initialScale={.49}
-         initialPositionX={320}
+         initialPositionX={x}
          initialPositionY={1}
          defaultPositionX={1}
          defaultPositionY={1}  

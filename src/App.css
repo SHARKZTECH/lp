@@ -70,13 +70,13 @@ html {
   background-image: url(../src/assets/castle-bg.2c59d92c.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center right;
+  background-position: center center;
   min-width: 1500px;
   min-height: 1500px;
   transition: all 0s;
   transform-origin: center;
   /* zoom: .49; */
-  margin: 8rem auto auto auto;
+  margin: 8rem auto auto auto;  
 }
 
 
