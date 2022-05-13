@@ -44,9 +44,9 @@ function App() {
       defaultPosition={{x: '1500px', y: '100vh'}}
       > */}
     <TransformWrapper
-         minScale={.49}
-         initialScale={.49}
-         initialPositionX={x}
+         minScale={1}
+         initialScale={1}
+         initialPositionX={0}
          initialPositionY={1}
          defaultPositionX={1}
          defaultPositionY={1}  
