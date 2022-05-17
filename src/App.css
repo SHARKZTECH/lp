@@ -67,7 +67,7 @@ html {
 }
 .castle-bg {
   position: relative;
-  background-image: url(../src/assets/castle-bg.2c59d92c.jpeg);
+  background-image: url(../src/assets/map.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -112,8 +112,8 @@ html {
 
 .jester-container {
   position: absolute;
-  bottom: 407px;
-  left: 656px;
+  bottom: 415px;
+  left: 595px;
 }
 .jester-wrap {
   overflow: hidden;
@@ -138,15 +138,15 @@ html {
 .quest-btn {
   position: absolute;
   top: 60px;
-  left: 250px;
+  left: 190px;
   height: 43px;
   width: 43px;
 }
 
 .land-auction-btn {
   position: absolute;
-  top: 150px;
-  left: 800px;
+  top: 140px;
+  left: 740px;
   height: 43px;
   width: 43px;
 }
