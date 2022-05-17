@@ -9,7 +9,7 @@ function Modal({show,setShow,text}) {
              <div className="modal-body"></div>
              <div className="coming-soon__wrap">
                  <div className="coming-soon">
-                     <span>Comming Soon</span>
+                     <span>Coming Soon</span>
                  </div>
              </div>
          </div>
