@@ -71,8 +71,8 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  min-width: 1500px;
-  min-height: 1500px;
+  min-width: 150vw;
+  min-height: 125vh;
   transition: all 0s;
   transform-origin: center;
   /* zoom: .49; */
@@ -112,8 +112,8 @@ html {
 
 .jester-container {
   position: absolute;
-  bottom: 415px;
-  left: 595px;
+  bottom: 50px;
+  left: 950px;
 }
 .jester-wrap {
   overflow: hidden;
@@ -122,39 +122,39 @@ html {
 }
 .jester-grandle-btn {
   position: absolute;
-  top: -250px;
-  left: -35px;
+  top: -270px;
+  left: -33px;
   height: 43px;
   width: 43px;
 }
 .clp-grandle-btn {
   position: absolute;
+  right: -202px;
+  bottom: 95px;
   height: 43px;
   width: 43px;
-  right: -420px;
-  bottom: -90px;
 }
 
 .quest-btn {
   position: absolute;
-  top: 60px;
-  left: 190px;
+  top: 15px;
+  left: 740px;
   height: 43px;
   width: 43px;
 }
 
 .land-auction-btn {
   position: absolute;
-  top: 140px;
-  left: 740px;
+  top: 55px;
+  left: 995px;
   height: 43px;
   width: 43px;
 }
 
 .sum-btn {
   position: absolute;
-  top: 340px;
-  right: 170px;
+  top: 150px;
+  right: 725px;
   height: 43px;
   width: 43px;
 }
@@ -219,10 +219,11 @@ html {
   text-align: center;
   color: #000;
   font-family: Lora,serif;
-  font-weight: 700;
+  font-weight: 600;
   white-space: nowrap;
   z-index: 1;
-  padding: .4rem 1.2rem;
+  /* padding: .4rem 1.2rem; */
+  padding: .1rem .3rem;
   margin-bottom: -1.1rem;
 }
 

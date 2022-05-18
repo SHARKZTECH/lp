@@ -46,9 +46,9 @@ function App() {
     <TransformWrapper
          minScale={1}
          initialScale={1}
-         initialPositionX={0}
+         initialPositionX={-340}
          initialPositionY={1}
-         defaultPositionX={1}
+         defaultPositionX={-340}
          defaultPositionY={1}  
         // limitToBounds={false}
         // onWheel={()=>{console.log("whell")}}
@@ -85,7 +85,7 @@ function App() {
        <div className='jester-wrap'> 
      <div className='clp-grandle-btn click-cursor'>
        <button className='game-button click-cursor' onClick={()=>{setShow(true); setText('LP')}}>
-         <div className='title'>LP</div>
+         <div className='title'><span style={{color: '#ffe0b7'}}>...</span>LP<span style={{color: '#ffe0b7'}}>..</span></div>
          <img src='../scr/assets/bubble-arrow.c34d2c3a.png' alt='buble'/>
        </button>
      </div>
