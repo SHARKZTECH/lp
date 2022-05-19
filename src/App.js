@@ -31,8 +31,9 @@ function App() {
     return size;
   }
   const [width, height] = useWindowSize(); 
-  console.log(width)
-  const x=window.innerWidth >= 1200 ? 320 : window.innerWidth >= 800 ? 100 : window.innerWidth >= 540 ? 50 : 1;
+  console.log(width,height)
+  
+  const x=window.innerWidth >= 1200 ? -340  : -740;
 
   return (  
   
@@ -46,9 +47,9 @@ function App() {
     <TransformWrapper
          minScale={1}
          initialScale={1}
-         initialPositionX={-340}
+         initialPositionX={x}
          initialPositionY={1}
-         defaultPositionX={-340}
+         defaultPositionX={1}
          defaultPositionY={1}  
         // limitToBounds={false}
         // onWheel={()=>{console.log("whell")}}

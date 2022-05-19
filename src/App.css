@@ -71,14 +71,17 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  min-width: 150vw;
-  min-height: 125vh;
+  min-height: 735px;
+  min-width:2050px;
   transition: all 0s;
   transform-origin: center;
   /* zoom: .49; */
   margin: 8rem auto auto auto;  
 }
-
+/* 2050px 735 */
+/* 2130px 750 */
+/* 3550px 1250  2.84*/
+/* 150vw 125vh 1.2*/
 
 .fire-wrap-1 {
   bottom: 358px;
