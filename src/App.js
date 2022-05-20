@@ -33,7 +33,7 @@ function App() {
   const [width, height] = useWindowSize(); 
   console.log(width,height)
   
-  const x=window.innerWidth >= 1200 ? -340  : -740;
+  const x=window.innerWidth >= 1050 ? -340  :window.innerWidth >= 700 ? -1200  : -740;
 
   return (  
   
@@ -46,6 +46,7 @@ function App() {
       > */}
     <TransformWrapper
          minScale={1}
+         maxScale={2}
          initialScale={1}
          initialPositionX={x}
          initialPositionY={1}

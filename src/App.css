@@ -78,6 +78,20 @@ html {
   /* zoom: .49; */
   margin: 8rem auto auto auto;  
 }
+@media (max-width: 900px){
+  .castle-bg {
+    min-height: 1250px;
+    min-width:3550px;   
+  } 
+ 
+ }
+ @media (max-width: 540px){
+  .castle-bg {
+    min-height: 735px;
+  min-width:2050px;   
+  }  
+ }
+
 /* 2050px 735 */
 /* 2130px 750 */
 /* 3550px 1250  2.84*/
@@ -161,6 +175,61 @@ html {
   height: 43px;
   width: 43px;
 }
+@media (max-width: 900px){
+  .jester-container {
+    position: absolute;
+    bottom: 250px;
+    left: 1700px;
+  }
+  .jester-grandle-btn {
+    top: -300px;
+    left: -80px;
+  }
+  .clp-grandle-btn {
+    right: -302px;
+    bottom: 30px; 
+  }
+  .quest-btn {
+    top: 45px;
+    left: 1300px; 
+  }
+  .land-auction-btn {
+    top: 95px;
+    left: 1750px;
+  }
+  .sum-btn {
+    top: 250px;
+    right: 1250px;
+  }
+ }
+ @media (max-width: 540px){
+.jester-container {
+  position: absolute;
+  bottom: 50px;
+  left: 950px;
+}
+.jester-grandle-btn {
+  top: -270px;
+  left: -33px;
+}
+.clp-grandle-btn {
+  right: -202px;
+  bottom: 95px; 
+}
+.quest-btn {
+  top: 15px;
+  left: 740px; 
+}
+.land-auction-btn {
+  top: 55px;
+  left: 995px;
+}
+.sum-btn {
+  top: 150px;
+  right: 725px;
+}
+  
+ }
 .click-cursor {
   cursor: url(../src/assets/click-cursor.f0afc4df.png),pointer;
 }
