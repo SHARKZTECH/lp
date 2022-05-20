@@ -14,7 +14,7 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                    <div className="filter-header-group">
                        <span>Filter</span>
                        <div className="filter-toggle-btn click-cursor">
-                           <i className="fas fa-caret-up"></i>
+                           <i className="fas fa-angle-left"></i>
                        </div>
                    </div>
                    <div className="filter-header-group">
@@ -158,8 +158,8 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                      </div>
                     </div>
                 </div>
-                <div className="land-list game-scroll-bar rowl">
-                    <div className="col c-12 c-12l">
+                <div className="land-list game-scroll-bar row">
+                    <div className="col c-12 l-3 l-4">
                         <div>
                             <div className="land-item">
                                 <div className="land-image-wrap">
@@ -193,7 +193,7 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                             </div>
                         </div>
                     </div>   
-                    <div className="col c-12">
+                    <div className="col  c-12 l-3 l-4">
                         <div>
                             <div className="land-item">
                                 <div className="land-image-wrap">
@@ -227,7 +227,7 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                             </div>
                         </div>
                     </div> 
-                    <div className="col c-12">
+                    <div className="col  c-12 l-3 l-4">
                         <div>
                             <div className="land-item">
                                 <div className="land-image-wrap">
@@ -261,7 +261,7 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                             </div>
                         </div>
                     </div>
-                    <div className="col c-12">
+                    <div className="col  c-12 l-3 l-4">
                         <div>
                             <div className="land-item">
                                 <div className="land-image-wrap">
@@ -295,7 +295,7 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                             </div>
                         </div>
                     </div>
-                    <div className="col c-12">
+                    <div className="col  c-12 l-3 l-4">
                         <div>
                             <div className="land-item">
                                 <div className="land-image-wrap">

@@ -4,7 +4,7 @@ function Modal({showm,setShowm,text,setShowi,setTexti}) {
 
     return (
       <div className={showm ? `modal-overlay overlay active` : `modal-overlay overlay`}>      
-         <div className="modal game-border fancy" style={{width: '100vh',height: '264px',marginBottom: '30px'}}>
+         <div className="modal game-border fancy" style={{width: '600px',height: '316px',marginBottom: '0px'}}>
              <div className="close-btn click-cursor" onClick={()=>setShowm(false)}></div>
              <h3 className="modal-title fancy">
                  <span>{text}</span>

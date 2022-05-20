@@ -94,7 +94,7 @@ function App() {
      </div>
 
      <div className='land-auction-btn click-cursor'>
-       <button className='game-button click-cursor' onClick={()=>{setShow(true); setText('Marketplace')}}>
+       <button className='game-button click-cursor' onClick={()=>{setShowm(true); setText('Marketplace')}}>
          <div className='title'>Marketplace</div>
          <img src='../scr/assets/bubble-arrow.c34d2c3a.png' alt='buble'/>
        </button>
