@@ -31,7 +31,7 @@ function App() {
     return size;
   }
   const [width, height] = useWindowSize(); 
-  console.log(width,height)
+  // console.log(width,height)
   
   const x=window.innerWidth >= 1050 ? -340  :window.innerWidth >= 700 ? -1200  : -740;
 

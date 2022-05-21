@@ -3,8 +3,99 @@ import Land2 from "../assets/land-2.png"
 import Land3 from "../assets/land-3.png"
 import Land4 from "../assets/land-4.png"
 import Land5 from "../assets/land-5.png"
+import MarketItem from "./MarketItem"
+import { useState,useEffect} from "react"
+
+const _items=[  
+    {
+        "id" : 1,
+        "name" : "Sword 1",
+        "image" : Land1,
+        "price" : 0,
+    },
+    {
+        "id" : 2,
+        "name" : "Sword 2",
+        "image" : Land2,
+        "price" : 0,
+    }, 
+    {
+        "id" : 3,
+        "name" : "Sword 3",
+        "image" : Land3,
+        "price" : 300000,
+    }, 
+    {
+        "id" : 4,
+        "name" : "Sword 4",
+        "image" : Land4,
+        "price" : 400000,
+    },   
+    {
+        "id" : 5,
+        "name" : "Sword 5",
+        "image" : Land5,
+        "price" : 0,
+    }  
+]
 
 const Market= ({showi,setShowi,setShowm,texti})=>{
+    const [items,setItems]=useState([])
+    const [selected,setSelected]=useState('4')
+    const [selectedt,setSelectedt]=useState('')   
+
+    function sortBy(property) {
+        var sortOrder = 1;
+        if (property[0] === "-") {
+          sortOrder = -1;
+          property = property.substr(1);
+        }
+        return function(a, b) {
+          var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+          return result * sortOrder;
+        }
+      }  
+
+        if(selected === '0' && selectedt === '0'){
+        items.sort(sortBy('-id'));
+        }
+        if(selected === '1' && selectedt === '0'){
+        items.sort(sortBy('name'));
+        }
+        if(selected === '2' && selectedt === '0'){
+        items.sort(sortBy('-id'));
+        }
+        if(selected === '3' && selectedt === '0'){
+        items.sort(sortBy('id'));
+        }
+        if(selected === '4' && selectedt === '0'){
+            items.sort(sortBy('-price'));
+        }  
+
+        if(selected === '0' && selectedt === '1'){
+        items.sort(sortBy('id'));
+        }
+        if(selected === '1' && selectedt === '1'){
+        items.sort(sortBy('-name'));
+        }
+        if(selected === '2' && selectedt === '1'){
+        items.sort(sortBy('id'));
+        }
+        if(selected === '3' && selectedt === '1'){
+        items.sort(sortBy('-id'));
+        }
+        if(selected === '4' && selectedt === '1'){
+            items.sort(sortBy('price'));
+        }  
+   
+    useEffect(()=>{
+        setItems(_items)
+    },[items]);
+
+    const handleApply=()=>{
+    }
+    const handleReset=()=>{
+    }
 
     return(
         <div className={showi ? `land-auction overlay row active ` : `land-auction overlay row`} style={{display:'flex'}}>
@@ -18,8 +109,8 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                        </div>
                    </div>
                    <div className="filter-header-group">
-                   <button className="green-button click-cursor filter-btn">Apply</button>
-                   <button className="green-button click-cursor filter-btn">Reset</button>
+                   <button className="green-button click-cursor filter-btn" onClick={handleApply}>Apply</button>
+                   <button className="green-button click-cursor filter-btn" onClick={handleReset}>Reset</button>
                    </div>
                    </div>
                    <div className="filter-body game-scroll-bar">
@@ -142,7 +233,7 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                     <div className="land-sort">
                      <span className="land-sort__label">Sort By:</span>
                      <div className="land-select__list" id="landPropertyLabel">
-                         <select className="click-cursor" name="sortType" id="sortType">
+                         <select className="click-cursor" name="sortType" id="sortType" onChange={(e)=>setSelected(e.target.value)} value={selected} defaultValue={'4'}>
                          <option value={'0'}>ID</option>    
                          <option value={'1'}>Name</option>    
                          <option value={'2'}>Category</option>    
@@ -151,7 +242,7 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                          </select>
                      </div>
                      <div className="land-select__list" id="landPropertyLabel">
-                         <select className="click-cursor" name="sortType" id="sortType">
+                         <select className="click-cursor" name="sortType" id="sortType" onChange={(e)=>setSelectedt(e.target.value)} value={selectedt} defaultValue={'0'}>
                          <option value='0'>Ascending</option>
                          <option value='1'>Descending</option>
                          </select>
@@ -159,7 +250,12 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                     </div>
                 </div>
                 <div className="land-list game-scroll-bar row">
-                    <div className="col c-12 l-3 l-4">
+                    {
+                          texti === "View All Assets" ? items.map(item=> <MarketItem id={item.id} price={item.price} image={item.image}/>) :
+                          texti === "Buy Assets" && items.map(item=>item.price !== 0 && <MarketItem id={item.id} price={item.price} image={item.image}/> )
+                    }
+                    <>
+                    {/* <div className="col c-12 l-3 l-4">
                         <div>
                             <div className="land-item">
                                 <div className="land-image-wrap">
@@ -328,7 +424,8 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                                 </div>
                             </div>
                         </div>
-                    </div>              
+                    </div>               */}
+                    </>
                 </div>
             </div>
         </div>
