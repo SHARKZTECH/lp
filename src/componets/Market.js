@@ -40,9 +40,11 @@ const _items=[
 ]
 
 const Market= ({showi,setShowi,setShowm,texti})=>{
-    const [items,setItems]=useState([])
+    const [items,setItems]=useState([]);
     const [selected,setSelected]=useState('4')
-    const [selectedt,setSelectedt]=useState('')   
+    const [selectedt,setSelectedt]=useState('');
+    const [filter,setFilter]=useState('') 
+
 
     function sortBy(property) {
         var sortOrder = 1;
@@ -87,15 +89,36 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
         if(selected === '4' && selectedt === '1'){
             items.sort(sortBy('price'));
         }  
-   
-    useEffect(()=>{
-        setItems(_items)
-    },[items]);
+
+
 
     const handleApply=()=>{
+        if(filter === '-1' ){
+             setItems(_items)           
+        }
+        if(filter === '0' ){
+            setItems(items.filter((item)=> item.price !== 0))          
+        }
+        if(filter === '1' && texti === "Buy Assets"){
+         setItems([])          
+         }
+       if(filter === '1' && texti === "View All Assets"){
+          setItems(items.filter((item)=> item.price === 0))          
+       }
+       if(filter === '2' ){
+        setItems([])          
+      }        
     }
+
     const handleReset=()=>{
+        setItems(_items)
+        setFilter('-1')
     }
+
+    useEffect(()=>{
+        setItems(_items)
+        handleApply();
+    },[]);
 
     return(
         <div className={showi ? `land-auction overlay row active ` : `land-auction overlay row`} style={{display:'flex'}}>
@@ -123,25 +146,25 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                            <ul className="filter-status__list row ">
                            <li className="filter-status__item col c-6">
                                <label className="status-label click-cursor">
-                               <input className="click-cursor" type={'radio'} name='status' id='status--1' value={'-1'}/>
+                               <input className="click-cursor" type={'radio'} name='status' id='status--1' value={'-1'} onChange={(e)=>{setFilter(e.target.value); setItems(_items)}} defaultChecked checked={ filter === '-1'} />
                                <span>All</span>
                                </label>
                            </li> 
                             <li className="filter-status__item col c-6">
                                <label className="status-label click-cursor">
-                               <input className="click-cursor" type={'radio'} name='status' id='status-0' value={'0'}/>
+                               <input className="click-cursor" type={'radio'} name='status' id='status-0' value={'0'} onChange={(e)=>{setFilter(e.target.value); setItems(_items)}} checked={ filter === '0'}/>
                                <span>For Sale</span>
                                </label>
                            </li>
                              <li className="filter-status__item col c-6">
                                <label className="status-label click-cursor">
-                               <input className="click-cursor" type={'radio'} name='status' id='status-1' value={'1'}/>
+                               <input className="click-cursor" type={'radio'} name='status' id='status-1' value={'1'} onChange={(e)=>{setFilter(e.target.value); setItems(_items)}} checked={ filter === '1'}/>
                                <span>Not For sale</span>
                                </label>
                            </li>
                            <li className="filter-status__item col c-6">
                                <label className="status-label click-cursor">
-                               <input className="click-cursor" type={'radio'} name='status' id='status-21' value={'2'}/>
+                               <input className="click-cursor" type={'radio'} name='status' id='status-21' value={'2'} onChange={(e)=>{setFilter(e.target.value); setItems(_items)}} checked={ filter === '2'}/>
                                <span>For Lease</span>
                                </label>
                            </li>
@@ -155,7 +178,7 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                                <li className="filter-region__item col c-6">
                                    <label className="region-label click-cursor">
                                        <input className="click-cursor region-checkbox" type={'checkbox'}
-                                       name='regions' id='region--1' value={'-1'} />
+                                       name='regions' id='region--1' value={'-1'} defaultChecked/>
                                        <span>All</span>
                                    </label>
                                </li>
@@ -250,9 +273,10 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                     </div>
                 </div>
                 <div className="land-list game-scroll-bar row">
-                    {
+                    {     items.length > 0 ?
                           texti === "View All Assets" ? items.map(item=> <MarketItem id={item.id} price={item.price} image={item.image}/>) :
                           texti === "Buy Assets" && items.map(item=>item.price !== 0 && <MarketItem id={item.id} price={item.price} image={item.image}/> )
+                          : 'no items'
                     }
                     <>
                     {/* <div className="col c-12 l-3 l-4">
