@@ -1053,3 +1053,60 @@ option {
   text-align: center;
 }
 
+
+ /* item DETAILS  */
+ .modal-title{
+  color: maroon;
+  text-align: center;
+  margin-bottom: 0px;
+}
+ .modal-title.basic {
+  font-size: 28px;
+  font-family: Lora, Georgia, serif;
+  font-weight: 400;
+}
+.modal .land-id {
+  font-weight: 400;
+  color: rgb(62, 31, 5);
+  font-family: Poppins;
+  margin: 0px;
+}
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.modal .land-region {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(62, 31, 5);
+  font-family: Poppins;
+  margin: 5px auto;
+}
+h4 {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.modal .land-level{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 300px;
+  background-color: rgb(239, 203, 162);
+  padding: 12px 16px;
+  margin: 32px auto 12px;
+  border-radius: 8px;
+}
+.modal .land-owner{
+  text-align: center;
+  margin: 32px 0px 16px;
+}

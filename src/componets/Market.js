@@ -39,11 +39,12 @@ const _items=[
     }  
 ]
 
-const Market= ({showi,setShowi,setShowm,texti})=>{
+const Market= ({showi,setShowi,setShowm,texti,setId,setShowd})=>{
     const [items,setItems]=useState([]);
     const [selected,setSelected]=useState('4')
     const [selectedt,setSelectedt]=useState('');
-    const [filter,setFilter]=useState('') 
+    const [filter,setFilter]=useState('-1') ;
+    const [inp,setInp]=useState('');
 
 
     function sortBy(property) {
@@ -92,7 +93,8 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
 
 
 
-    const handleApply=()=>{
+    const handleApply=()=>{        
+     
         if(filter === '-1' ){
              setItems(_items)           
         }
@@ -107,12 +109,19 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
        }
        if(filter === '2' ){
         setItems([])          
-      }        
+      } 
+
+      if(inp > 0){
+        setItems(items.filter((item)=> Number(item.id) === Number(inp)))
+        console.log(items)
+    } 
+
     }
 
     const handleReset=()=>{
-        setItems(_items)
-        setFilter('-1')
+        setItems(_items);
+        setFilter('-1');
+        setInp('');
     }
 
     useEffect(()=>{
@@ -138,7 +147,7 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                    </div>
                    <div className="filter-body game-scroll-bar">
                    <div className="filter-search">
-                       <input type='text' className="filter-search-input" placeholder="Search by Asset ID"/>
+                       <input type='text' className="filter-search-input" placeholder="Search by Asset ID" onChange={(e)=>{setInp(e.target.value); setItems(_items)}} value={inp}/>
                    </div>
                    <div className="filter-status">
                        <span className="filter-heading">Status</span>
@@ -251,7 +260,7 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                 <h2 className="land-view__heading">{texti}</h2>
                 <div className="summry-sort-land">
                     <div className="land-summary">
-                        <span>Showing 5 Assets</span>
+                        <span>Showing {items.length} Assets</span>
                     </div>
                     <div className="land-sort">
                      <span className="land-sort__label">Sort By:</span>
@@ -274,9 +283,9 @@ const Market= ({showi,setShowi,setShowm,texti})=>{
                 </div>
                 <div className="land-list game-scroll-bar row">
                     {     items.length > 0 ?
-                          texti === "View All Assets" ? items.map(item=> <MarketItem id={item.id} price={item.price} image={item.image}/>) :
-                          texti === "Buy Assets" && items.map(item=>item.price !== 0 && <MarketItem id={item.id} price={item.price} image={item.image}/> )
-                          : 'no items'
+                          texti === "View All Assets" ? items.map(item=> <MarketItem id={item.id} price={item.price} image={item.image} setId={setId} setShowd={setShowd} setShowi={setShowi}/>) :
+                          texti === "Buy Assets" && items.map(item=>item.price !== 0 && <MarketItem id={item.id} price={item.price} image={item.image} setId={setId} setShowd={setShowd} setShowi={setShowi}/> )
+                          : 'no lands available in this category'
                     }
                     <>
                     {/* <div className="col c-12 l-3 l-4">

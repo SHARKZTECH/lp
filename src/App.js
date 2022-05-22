@@ -8,12 +8,15 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Modal from './componets/Modal';
 import ModalM from './componets/ModalM';
 import Market from "./componets//Market";
+import MarketItemDetails from './componets/MarketItemDetails';
 
 
 
 function App() {
   const [show, setShow] = useState(false);
   const [showm, setShowm] = useState(false);
+  const [showd, setShowd] = useState(false);
+  const [id,setId]=useState('');  
   const [text, setText] = useState('')
   const [showi, setShowi] = useState(false);
   const [texti, setTexti] = useState('');
@@ -119,7 +122,9 @@ function App() {
     {/* </MapInteractionCSS> */}
     <Modal show={show} setShow={setShow} text={text}/>
     <ModalM showm={showm} setShowm={setShowm} text={text} setShowi={setShowi} setTexti={setTexti}/>
-    <Market showi={showi} setShowm={setShowm} setShowi={setShowi} texti={texti} />
+    <Market showi={showi} setShowm={setShowm} setShowi={setShowi} texti={texti} setId={setId} setShowd={setShowd}/>
+
+    <MarketItemDetails showd={showd} setShowd={setShowd} id={id} setId={setId} setShowi={setShowi}/>
 
     </div>
 

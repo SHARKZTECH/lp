@@ -1,4 +1,6 @@
-const MarketItem=({id,name,price,image})=>{
+
+const MarketItem=({id,name,price,image,setShowd,setId,setShowi})=>{
+
     return(
         <>
          <div className="col c-12 l-3 l-4">
@@ -37,11 +39,12 @@ const MarketItem=({id,name,price,image})=>{
                                     </div>
                                 </div>
                                 <div className="land-item__button-wrap">
-                                    <button className="green-button click-cursor">View Details</button>
+                                    <button className="green-button click-cursor" onClick={()=>{setId(id);setShowd(true);setShowi(false)}}>View Details</button>
                                 </div>
                             </div>
                         </div>
                     </div>  
+               
         </>
     )
 }
