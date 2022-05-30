@@ -457,15 +457,7 @@ element.style {
   will-change: opacity;
   transition: all 0.5s linear 0s;
 }
-@media (max-width: 1024px){  
-  .land-auction {
-    margin-bottom: 0px;
-    align-items: unset;
-    margin-top: 0px;
-    padding-top: 30px;
-    overflow-x: hidden;
-  }
-}
+
 
 .land-auction{
   z-index: -1;
@@ -475,6 +467,16 @@ element.style {
   transition: all 0.5s linear 0s;
   margin: 0px;
   padding: 60px 3% 30px;
+}
+
+@media (max-width: 1024px){  
+  .land-auction {
+    margin-bottom: 0px;
+    align-items: unset;
+    margin-top: 0px;
+    padding-top: 30px;
+    overflow-x: hidden;
+  }
 }
 .row {
   display: flex;
@@ -1109,4 +1111,149 @@ h4 {
 .modal .land-owner{
   text-align: center;
   margin: 32px 0px 16px;
+}
+
+
+/* STAKING */
+
+.staking.active{
+  z-index: 3000;
+  opacity: 1;
+  will-change: opacity;
+  transition: all 0.5s linear 0s;
+  color: #f3f4f6;
+}
+.staking{
+  z-index: -1;
+  opacity: 0;
+  will-change: opacity;
+  box-sizing: border-box;
+  transition: all 0.5s linear 0s;
+  margin: 0px;
+  padding: 60px 3% 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+}
+.staking-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  position: relative;
+}
+.staking-logo{
+    width: 100%;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    border-bottom: rgba(15, 15, 15, 0.8) 1px solid;
+}
+.staking-logo-img-wrapper{
+  width: 50px;
+  height: 50px;
+  /* background-color:#c5a67c; */
+  padding: .3rem;
+
+}
+.staking-logo-img{
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: lighten;
+}
+.staking-header{
+  display: block;
+}
+.staking-nft-img-wrapper{
+   display: flex;
+   align-items: center;
+}
+.staking-nft-img{
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-color: #ffe0b7;
+}
+.staking h2{
+  margin: 1px;
+}
+.staking p{
+  margin: 1px;
+}
+.staking button{
+  background-color:rgb(12, 74, 110);
+  border: none;
+  margin: 15px 1px 20px 1px;
+  color: #f3f4f6;
+  padding: .5rem;
+  border-radius: .2rem;
+  opacity: 1;
+}
+.staking .disabled{
+  opacity: .3;
+}
+.staking-it{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.staking-item{}
+
+.staking-filter{
+  width: 100%;
+  margin-left: 0;
+  position: absolute;
+  left: 0;
+  margin-bottom: 10px;
+  border-bottom: rgba(15, 15, 15, 0.8) 1px solid;
+}
+.staking-filter .selected{
+  background-color:rgb(12, 74, 110);
+}
+.staking-filter button{
+  margin-bottom: 0;
+   background-color: #000;
+}
+.staking-item-container{
+  margin-top: 5rem;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+  
+}
+.staking-item-container p{
+   text-align: center;  
+}
+.staking-item-img-wrapper{}
+
+.staking-item-img{
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: #3e526e;
+}
+.staking-ft{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.staking-ft .btn-ft{
+  z-index: -1;
+  opacity: 0;
+  will-change: opacity;
+}
+.staking-ft .btn-ft.active{
+  z-index: 3000;
+  opacity: 1;
+  will-change: opacity;
+  transition: all 0.5s linear 0s;
 }

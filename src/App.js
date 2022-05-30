@@ -9,12 +9,14 @@ import Modal from './componets/Modal';
 import ModalM from './componets/ModalM';
 import Market from "./componets//Market";
 import MarketItemDetails from './componets/MarketItemDetails';
+import Staking from './componets/Staking';
 
 
 
 function App() {
   const [show, setShow] = useState(false);
   const [showm, setShowm] = useState(false);
+  const [shows, setShows] = useState(false);
   const [showd, setShowd] = useState(false);
   const [id,setId]=useState('');  
   const [text, setText] = useState('')
@@ -78,7 +80,7 @@ function App() {
      <div className='jester-container'>
        <div className='jester-wrap'> 
      <div className='jester-grandle-btn click-cursor'>
-       <button className='game-button click-cursor' onClick={()=>{setShow(true); setText('Staking')}}>
+       <button className='game-button click-cursor' onClick={()=>{setShows(true); setText('Staking')}}>
          <div className='title'>Staking</div>
          <img src='../scr/assets/bubble-arrow.c34d2c3a.png' alt='buble'/>
        </button>
@@ -125,7 +127,7 @@ function App() {
     <Market showi={showi} setShowm={setShowm} setShowi={setShowi} texti={texti} setId={setId} setShowd={setShowd}/>
 
     <MarketItemDetails showd={showd} setShowd={setShowd} id={id} setId={setId} setShowi={setShowi}/>
-
+    <Staking shows={shows}/>
     </div>
 
   );
