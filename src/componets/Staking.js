@@ -165,7 +165,7 @@ const Staking=({shows})=>{
              
               </div>
                    <div className="staking-ft">
-                  <p>Select NFTs to move them to your {filter==="Your Wallet" ? "vault" : "wallet" }</p>
+                  <p>Select NFTs to move them to your {filter==="Your Wallet" ? "vault" : "wallet, stake or unstake" }</p>
                   <button className={deposit ? `btn-ft active`: `btn-ft` } onClick={depositHandler}> Deposit selected</button>
                   <button style={{marginTop :"-50px"}} className={Withdraw ? `btn-ft active`: `btn-ft` } onClick={withdrawHandler}>Withdraw selected</button>
                    </div>
