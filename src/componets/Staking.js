@@ -7,17 +7,20 @@ const _items=[
     {
     "id":1,
     "name":"Royal Knight",
-    "image":IMG
-   },
+    "image":IMG,
+    "status":""
+    },
    {
     "id":2,
     "name":"Royal Knight",
-    "image":IMG
+    "image":IMG,
+    "status":""
    },
    {
     "id":3,
     "name":"Royal Knight",
-    "image":IMG
+    "image":IMG,
+    "status":""
    }
 ]
 
@@ -25,7 +28,7 @@ const _items=[
 const Staking=({shows})=>{
     const [items,setItems]=useState([]);
     const [vault_items,setVault_items]=useState([]);
-    const [na_items,setNa_items]=useState([]);
+    const [na_items,setNa_items]=useState({});
     const [nb_items,setNb_items]=useState([]);
     const [deposit,setDeposit]=useState(false)
     const [Withdraw,setWithdraw]=useState(false)
@@ -37,27 +40,31 @@ const Staking=({shows})=>{
 
     useEffect(()=>{
        setItems(_items)
+       setVault_items([])
     },[])
 
-    const stakeHandler=()=>{
-        if(stake){
-            setStake(false)
-            setUnstake(true)
-        }       
-     }
-    const unstakeHandler=()=>{ 
-        if(unstake){
-            setStake(true)
-            setUnstake(false)
+    const stakeHandler=()=>{ 
+        if(filter === "Your vault" && na_items !== null ){
+            na_items['status']="staked";
         }
-     
-    }
-    const claimHandler=()=>{ }
+            setWithdraw(false);
+            setStake(false)
+      }
+    const unstakeHandler=()=>{
+        if(filter === "Your vault" && na_items !== null ){
+            na_items['status']="unstaked";
+        }
+            setUnstake(false);
+      }
+
+    const claimHandler=()=>{ }    
     const refreshHandler=()=>{ }
 
     const walletHandler=()=>{
           setFilter("Your Wallet")
           setWithdraw(false)
+          setStake(false)
+          setUnstake(false)
      }
 
     const vaultHandler=()=>{ 
@@ -67,24 +74,40 @@ const Staking=({shows})=>{
 
     const selectedDepositHandler=(id)=>{
         setDeposit(true)
-        setNa_items(items.filter((item)=> item.id === id ));
+        const new_item=(items.filter((item)=> item.id === id )[0]);
+        new_item['status']="unstaked";
+        setNa_items(new_item);
         setNb_items(items.filter((item)=> item.id !== id));
     }
+
     const selectedWithdrawHandler=(id)=>{
-        setWithdraw(true)
-        setNa_items(vault_items.filter((item)=> item.id === id ));
+        const new_item=(vault_items.filter((item)=> item.id === id )[0]);
+
+        if(new_item["status"] === "staked"){
+            setUnstake(true); 
+            setStake(false);
+            setWithdraw(false)           
+        }else{
+            setStake(true)
+            setWithdraw(true)
+            setUnstake(false)
+        }
+        
+        setNa_items(new_item)
         setNb_items(vault_items.filter((item)=> item.id !== id))
     }
+
     const depositHandler=()=>{ 
-        setStake(true)
-        setVault_items(na_items);
+        setVault_items([...vault_items,na_items]);
         setItems(nb_items);       
       }
-    const withdrawHandler=()=>{
-        setStake(false)
-        setUnstake(false)
+    const withdrawHandler=()=>{  
+        na_items["status"]="";
+        setStake(false);
+        setUnstake(false);     
+        setItems([...items,na_items]); 
         setVault_items(nb_items);
-        setItems(na_items); 
+        setWithdraw(false);
       }
 
     return(
@@ -144,7 +167,7 @@ const Staking=({shows})=>{
                    <div className="staking-ft">
                   <p>Select NFTs to move them to your {filter==="Your Wallet" ? "vault" : "wallet" }</p>
                   <button className={deposit ? `btn-ft active`: `btn-ft` } onClick={depositHandler}> Deposit selected</button>
-                  <button style={{marginTop: "-20px"}} className={Withdraw ? `btn-ft active`: `btn-ft` } onClick={withdrawHandler}>Withdraw selected</button>
+                  <button style={{marginTop :"-50px"}} className={Withdraw ? `btn-ft active`: `btn-ft` } onClick={withdrawHandler}>Withdraw selected</button>
                    </div>
             </div>
         </div>
