@@ -1144,6 +1144,13 @@ h4 {
   width: 600px;
   position: relative;
 }
+@media (max-width: 540px){
+  .staking-container{
+    width: 100%;
+    padding: .5rem;
+  }
+}
+
 .staking-logo{
     width: 100%;
     align-self: flex-start;
@@ -1224,8 +1231,13 @@ h4 {
   margin-top: 5rem;
    display: flex;
    flex-wrap: wrap;
-   gap: 1.5rem;
-  
+   gap: 1.5rem;  
+}
+@media (max-width: 540px){
+  .staking-item-container{  
+     gap: .8rem;  
+     flex: 1;
+  }
 }
 .staking-item-container p{
    text-align: center;  
