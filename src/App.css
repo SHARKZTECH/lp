@@ -1245,11 +1245,26 @@ h4 {
 .staking-item-img-wrapper{}
 
 .staking-item-img{
+  position: relative;
   width: 120px;
   height: 120px;
   background-size: cover;
   background-blend-mode: multiply;
   background-color: #3e526e;
+}
+.staking-item-img .selected-icon{
+  visibility: hidden;
+}
+.staking-item-img:hover .selected-icon{
+  visibility: visible;
+}
+.staking-item-img .selected-icon.clicked{
+  visibility: visible;
+}
+.selected-icon{
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 .staking-ft{
   margin-top: 2rem;

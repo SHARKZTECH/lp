@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import HEADER from "../assets/header.jpg"
 import NFT from "../assets/nft.jpg"
 import IMG from "../assets/royal-knight.jpg"
+import {TbDotsCircleHorizontal} from "react-icons/tb"
 
 const _items=[
     {
@@ -35,6 +36,7 @@ const Staking=({shows})=>{
     const [filter,setFilter]=useState("Your Wallet")
     const [stake,setStake]=useState(false)
     const [unstake,setUnstake]=useState(false)
+    const [clicked_id,setClicked_id]=useState(0);
     
 
 
@@ -46,6 +48,7 @@ const Staking=({shows})=>{
     const stakeHandler=()=>{ 
         if(filter === "Your vault" && na_items !== null ){
             na_items['status']="staked";
+            setClicked_id(0)
         }
             setWithdraw(false);
             setStake(false)
@@ -53,6 +56,7 @@ const Staking=({shows})=>{
     const unstakeHandler=()=>{
         if(filter === "Your vault" && na_items !== null ){
             na_items['status']="unstaked";
+            setClicked_id(0)
         }
             setUnstake(false);
       }
@@ -65,22 +69,29 @@ const Staking=({shows})=>{
           setWithdraw(false)
           setStake(false)
           setUnstake(false)
+          setClicked_id(0)
+
      }
 
     const vaultHandler=()=>{ 
         setFilter("Your vault");
         setDeposit(false)
+        setClicked_id(0)
     }
 
     const selectedDepositHandler=(id)=>{
+        setClicked_id(id);
         setDeposit(true)
         const new_item=(items.filter((item)=> item.id === id )[0]);
+
         new_item['status']="unstaked";
         setNa_items(new_item);
         setNb_items(items.filter((item)=> item.id !== id));
     }
 
     const selectedWithdrawHandler=(id)=>{
+        setClicked_id(id);
+
         const new_item=(vault_items.filter((item)=> item.id === id )[0]);
 
         if(new_item["status"] === "staked"){
@@ -153,12 +164,20 @@ const Staking=({shows})=>{
               <div className="staking-item-container">
                   {filter==="Your Wallet" ? items?.map((item)=>(
                   <div key={item.id} className="staking-item-img-wrapper" onClick={()=>selectedDepositHandler(item.id)}>
-                     <div className="staking-item-img" style={{backgroundImage: `url(${item.image})`}}></div>
+                     <div className="staking-item-img" style={{backgroundImage: `url(${item.image})`}}>
+                         <i className={item.id === clicked_id ? "selected-icon clicked" : "selected-icon"}>
+                             <TbDotsCircleHorizontal/>
+                         </i>
+                     </div>
                       <p>{item.name} #{item.id}</p>
                   </div>
                   )):vault_items?.map((item)=>(
                     <div key={item.id} className="staking-item-img-wrapper" onClick={()=>selectedWithdrawHandler(item.id)}>
-                       <div className="staking-item-img" style={{backgroundImage: `url(${item.image})`}}></div>
+                       <div className="staking-item-img" style={{backgroundImage: `url(${item.image})`}}>
+                       <i className={item.id === clicked_id ? "selected-icon clicked" : "selected-icon"}>
+                             <TbDotsCircleHorizontal/>
+                         </i>
+                       </div>
                         <p>{item.name} #{item.id}</p>
                     </div>))
                     }                           
