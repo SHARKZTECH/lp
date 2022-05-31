@@ -25,6 +25,8 @@ const _items=[
 const Staking=({shows})=>{
     const [items,setItems]=useState([]);
     const [vault_items,setVault_items]=useState([]);
+    const [na_items,setNa_items]=useState([]);
+    const [nb_items,setNb_items]=useState([]);
     const [deposit,setDeposit]=useState(false)
     const [Withdraw,setWithdraw]=useState(false)
     const [filter,setFilter]=useState("Your Wallet")
@@ -38,12 +40,17 @@ const Staking=({shows})=>{
     },[])
 
     const stakeHandler=()=>{
-        setStake(false)
-        setUnstake(true)
+        if(stake){
+            setStake(false)
+            setUnstake(true)
+        }       
      }
     const unstakeHandler=()=>{ 
-        setStake(true)
-        setUnstake(false)
+        if(unstake){
+            setStake(true)
+            setUnstake(false)
+        }
+     
     }
     const claimHandler=()=>{ }
     const refreshHandler=()=>{ }
@@ -60,23 +67,25 @@ const Staking=({shows})=>{
 
     const selectedDepositHandler=(id)=>{
         setDeposit(true)
-        setVault_items(items.filter((item)=> item.id === id ));
-        setItems(items.filter((item)=> item.id !== id ));
+        setNa_items(items.filter((item)=> item.id === id ));
+        setNb_items(items.filter((item)=> item.id !== id));
     }
     const selectedWithdrawHandler=(id)=>{
         setWithdraw(true)
-        setVault_items(vault_items.filter((item)=> item.id !== id ));
-        setItems(vault_items.filter((item)=> item.id === id ));
+        setNa_items(vault_items.filter((item)=> item.id === id ));
+        setNb_items(vault_items.filter((item)=> item.id !== id))
     }
     const depositHandler=()=>{ 
         setStake(true)
+        setVault_items(na_items);
+        setItems(nb_items);       
       }
     const withdrawHandler=()=>{
         setStake(false)
         setUnstake(false)
+        setVault_items(nb_items);
+        setItems(na_items); 
       }
-
-    console.log(vault_items[0])
 
     return(
         <div className={shows ? `staking overlay active` : `staking overlay`}>
@@ -135,7 +144,7 @@ const Staking=({shows})=>{
                    <div className="staking-ft">
                   <p>Select NFTs to move them to your {filter==="Your Wallet" ? "vault" : "wallet" }</p>
                   <button className={deposit ? `btn-ft active`: `btn-ft` } onClick={depositHandler}> Deposit selected</button>
-                  <button className={Withdraw ? `btn-ft active`: `btn-ft` } onClick={withdrawHandler}>Withdraw selected</button>
+                  <button style={{marginTop: "-20px"}} className={Withdraw ? `btn-ft active`: `btn-ft` } onClick={withdrawHandler}>Withdraw selected</button>
                    </div>
             </div>
         </div>
